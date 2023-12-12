@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 
 
@@ -7,20 +9,17 @@ type TitleProps = {
  size: "small" | "large"; 
 }; 
 
-
-const Title = ({children, size}: TitleProps) => 
+const Title = ({children, size = "small"}: TitleProps) => 
 { return (
 <h1
   style={{
     fontSize:size === "small" ? "1.5rem": "3rem", 
   }}
-  >
-    {children}
-  </h1>
-)
+  >{children}
+  </h1> 
+  )
+  
 }; 
-
-
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +32,7 @@ function App() {
 
   </div>;
   
+
 }
 
 export default App; 
